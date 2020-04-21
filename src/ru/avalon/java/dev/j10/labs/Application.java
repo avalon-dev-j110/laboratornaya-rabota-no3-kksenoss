@@ -15,7 +15,7 @@ public class Application {
     Sort bubbleSort = new BubbleSort();
     Random random = new Random();   
         
-    int[] array = new int[20];
+    int[] array = new int[40000];
     
     for (int i = 0; i < array.length; i++) {       
 
@@ -24,22 +24,22 @@ public class Application {
                 
                 System.out.println("Тестовый вывод");
                 System.out.println("------------------------------------------------"); 
-		toInit(array, fibonacciInitializer);
+		inicial(array, fibonacciInitializer);
                 System.out.println("(массив Фибоначчи)");
 		sumArr(array);
                 
                 System.out.println("------------------------------------------------");   
                 
-		toInit(array, randomInitializer);
+		inicial(array, randomInitializer);
                 System.out.println("(Случайные числа -50..50)");
 		 
                 System.out.println("------------------------------------------------");  
                 
 		System.out.println("(Сортировка пузырьком)");
-		toSort(array, bubbleSort);	   
+		sortirovka(array, bubbleSort);	   
         }
     
-                public static void toInit(int[] array, Initializer initializer) {
+                public static void inicial(int[] array, Initializer initializer) {
 		initializer.initialize(array);
 		for (int i = 0; i < array.length; i++) {
 			System.out.println(i + "й" + " элемент массива " + " = " + array[i]);
@@ -48,7 +48,7 @@ public class Application {
 
 	}
 
-                public static void toSort(int[] array, Sort sort) {
+                public static void sortirovka(int[] array, Sort sort) {
 		sort.sort(array);
 		for (int i = 0; i < array.length; i++) {
 			System.out.println(i + "й" + " элемент массива " + " = " + array[i]);
@@ -109,6 +109,11 @@ public class Application {
 17й элемент массива  = -47
 18й элемент массива  = -4
 19й элемент массива  = 6
+
+СБОРКА УСПЕШНО ЗАВЕРШЕНА (общее время: 2 секунды) - 2к элементов
+СБОРКА УСПЕШНО ЗАВЕРШЕНА (общее время: 7 секунды) - 10к элементов
+СБОРКА УСПЕШНО ЗАВЕРШЕНА (общее время: 15 секунды) - 20к элементов
+СБОРКА УСПЕШНО ЗАВЕРШЕНА (общее время: 32 секунды)- 40к элементов
 */
  /*
 	     * TODO(Студент): Выполнить действия над массивом чисел
