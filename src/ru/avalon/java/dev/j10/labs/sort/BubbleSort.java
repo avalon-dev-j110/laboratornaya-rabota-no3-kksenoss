@@ -13,12 +13,21 @@ import ru.avalon.java.dev.j10.labs.Sort;
  */
 public class BubbleSort implements Sort {
 
-    /**
-     * {@inheritDoc}
-     */
+   
     public void sort(int[] array) {
+         
+         for(int i = array.length-1 ; i > 0 ; i--){
+         for(int j = 0 ; j < i ; j++){
+            if( array[j] > array[j+1] ){
+                int tmp = array[j];
+                array[j] = array[j+1];
+                array[j+1] = tmp;
+            }
+        }
+    }
+    }
         /*
          * TODO(Студент): Реализовать метод sort класса BubbleSort
          */
     }
-}
+
