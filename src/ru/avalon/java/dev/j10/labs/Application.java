@@ -4,7 +4,8 @@ import ru.avalon.java.dev.j10.labs.initialization.FibonacciInitializer;
 import ru.avalon.java.dev.j10.labs.initialization.RandomInitializer;
 import java.util.Random;
 import ru.avalon.java.dev.j10.labs.sort.BubbleSort;
-
+import ru.avalon.java.dev.j10.labs.sort.SelectionSort;
+import ru.avalon.java.dev.j10.labs.sort.ShellSort;
 
 public class Application {
 
@@ -14,7 +15,9 @@ public class Application {
     Initializer randomInitializer = new RandomInitializer();
     Sort bubbleSort = new BubbleSort();
     Random random = new Random();   
-        
+    Sort selectionSort = new SelectionSort();
+    Sort shellSort = new ShellSort();
+    
     int[] array = new int[40000];
     
     for (int i = 0; i < array.length; i++) {       
@@ -35,10 +38,28 @@ public class Application {
 		 
                 System.out.println("------------------------------------------------");  
                 
-		System.out.println("(Сортировка пузырьком)");
+		/*System.out.println("(Сортировка пузырьком)");
 		sortirovka(array, bubbleSort);	   
+                */
+                System.out.println("------------------------------------------------");
+                
+                /*inicial(array, randomInitializer);
+                System.out.println("(сортировка выбором)");
+                sortirovka(array, selectionSort);*/
+                
+                System.out.println("------------------------------------------------");
+                
+                inicial(array, randomInitializer);
+                System.out.println("(Сортировка Шелла)");
+                sortirovka(array, shellSort);
+                
+                System.out.println("------------------------------------------------");
+                
+                
+                
         }
-    
+                                
+                
                 public static void inicial(int[] array, Initializer initializer) {
 		initializer.initialize(array);
 		for (int i = 0; i < array.length; i++) {
@@ -65,7 +86,7 @@ public class Application {
 
 	}
 }
-/*
+/*     ПУЗЫРЕК
 1й тестовый запуск рандома
 0й элемент массива  = 12
 1й элемент массива  = 5
@@ -114,6 +135,22 @@ public class Application {
 СБОРКА УСПЕШНО ЗАВЕРШЕНА (общее время: 7 секунды) - 10к элементов
 СБОРКА УСПЕШНО ЗАВЕРШЕНА (общее время: 15 секунды) - 20к элементов
 СБОРКА УСПЕШНО ЗАВЕРШЕНА (общее время: 32 секунды)- 40к элементов
+
+                            ВЫБОР
+
+СБОРКА УСПЕШНО ЗАВЕРШЕНА (общее время: 3 секунды) - 2к
+СБОРКА УСПЕШНО ЗАВЕРШЕНА (общее время: 9 секунды) - 10к
+СБОРКА УСПЕШНО ЗАВЕРШЕНА (общее время: 18 секунды) - 15к
+СБОРКА УСПЕШНО ЗАВЕРШЕНА (общее время: 37 секунды) - 40к
+
+
+                                                    Шелл
+
+СБОРКА УСПЕШНО ЗАВЕРШЕНА (общее время: 2 секунды) - 2k
+СБОРКА УСПЕШНО ЗАВЕРШЕНА (общее время: 8 секунды) - 10к
+СБОРКА УСПЕШНО ЗАВЕРШЕНА (общее время: 18 секунды) - 20k
+СБОРКА УСПЕШНО ЗАВЕРШЕНА (общее время: 35 секунды) - 40к
+
 */
  /*
 	     * TODO(Студент): Выполнить действия над массивом чисел

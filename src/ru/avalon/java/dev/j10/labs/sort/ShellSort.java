@@ -17,12 +17,33 @@ import ru.avalon.java.dev.j10.labs.Sort;
  */
 public class ShellSort implements Sort {
 
-    /**
-     * {@inheritDoc}
-     */
+    
     public void sort(int[] array) {
+        
+        for (int inc = array.length / 2; inc >= 1; inc = inc / 2)
+            for (int step = 0; step < inc; step++)
+                insertionSort (array, step, inc);
+    }
+
+    private void insertionSort (int[] array, int start, int inc)
+    {
+        int tmp;
+        for (int i = start; i < array.length - 1; i += inc)
+            for (int j = Math.min(i+inc, array.length-1); j-inc >= 0; j = j-inc)
+                if (array[j - inc] > array[j])
+                {
+                    tmp = array[j];
+                    array[j] = array[j-inc];
+                    array[j-inc] = tmp;
+                }
+                else break;
+   }   
+        
         /*
          * TODO(Студент): Реализовать метод sort класса ShellSort
          */
     }
-}
+
+/**
+     * {@inheritDoc}
+     */
