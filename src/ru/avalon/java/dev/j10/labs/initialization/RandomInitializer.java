@@ -14,16 +14,29 @@ import java.util.Random;
  * инициализации.
  */
 public class RandomInitializer implements Initializer {
-    
+
+    /**
+     * Выполняет инициализацию массива, значениями
+     * последовательности случайных чисел.
+     *
+     * @param array массив, подлежащий инициализации
+     */
+
+    private int min;
+    private int max;
+
+    public RandomInitializer (int min, int max) {
+        this.min = min;
+        this.max = max;
+    }
 
     public void initialize(int[] array) {
         
-     Random random = new Random();
-
+        Random random = new Random();
 
         for (int i = 0; i < array.length; i++) {
 
-            array[i] = (random.nextInt(100) -50);
+            array[i] = (random.nextInt(max - min) + min);
         }
     }
 }

@@ -23,16 +23,17 @@ public class FibonacciInitializer implements Initializer {
    
     @Override
     public void initialize(int[] array) {
-        if (array.length == 0){
-            System.out.println("массив пуст");
-          return;  
+        
+        for(int i = 0; i < array.length; i++) {
+
+            if (i == 0 || i == 1) {
+                array[i] = 1;
+            }
+            else {
+                array[i] = (array[i-1] + array[i-2]);
+
+            }
         }
-        int i;
-        array [0] = 0;
-        array [1] = 1;
-        for (i = 2; i < array.length; i++){
-            array[i]=array[i - 1] + array [i - 2];
-        }             
     }
 }
         

@@ -12,13 +12,13 @@ public class Application {
     public static void main(String[] args) {
    
     Initializer fibonacciInitializer = new FibonacciInitializer();
-    Initializer randomInitializer = new RandomInitializer();
+    Initializer randomInitializer = new RandomInitializer(-50, +50);
     Sort bubbleSort = new BubbleSort();
     Random random = new Random();   
     Sort selectionSort = new SelectionSort();
     Sort shellSort = new ShellSort();
     
-    int[] array = new int[40000];
+    int[] array = new int[20];
     
     for (int i = 0; i < array.length; i++) {       
 
